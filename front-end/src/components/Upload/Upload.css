@@ -1,0 +1,29 @@
+.Upload {
+  display: grid;
+  box-sizing: border-box;
+
+  position: relative;
+  width: 300px;
+  height: 120px;
+  left: 574px;
+  top: 250px;
+
+  background: #FAFAFA;
+  border: 1px solid #D9D9D9;
+  border-radius: 5px;
+
+  align-content: center;
+}
+
+.text {
+  padding-left: 1rem;
+}
+
+.Upload-btn {
+  display: block;
+  padding: 0px 60px;
+  color: #fff;
+  font-size: 1em;
+  transition: all .4s;
+  cursor: pointer;
+}

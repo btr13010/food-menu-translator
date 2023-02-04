@@ -36,21 +36,38 @@ export class RealtimeData extends React.Component{
 
     render(){
 
-        return(
-            <div className="App">
-                {/* <div className="AppGlass"> */}
-                    <BrowserRouter>
-                        <Routes>
-                            <Route path='/'>
-                                <Route index element={<ExploreRestaurant data={this.state.tableData} changeData={(e)=>this.setState(e)}/>}/>
-                                <Route path='favorite' element={<Favorite data={this.state.tableData} changeData={(e)=>this.setState(e)}/>}/>
-                                <Route path='extractmenu' element={<ExtractMenu/>}/>
-                                <Route path='findrestaurant' element={<FindRestaurant/>}/>
-                            </Route>
-                        </Routes>
-                    </BrowserRouter>
-                {/* </div> */}
-            </div>
-        )
+        return (
+          <div className="App">
+            <BrowserRouter>
+              <Routes>
+                <Route path="/">
+                  <Route
+                    index
+                    element={
+                      <ExploreRestaurant
+                        data={this.state.tableData}
+                        changeData={(e) => this.setState(e)}
+                      />
+                    }
+                  />
+                  <Route
+                    path="favorite"
+                    element={
+                      <Favorite
+                        data={this.state.tableData}
+                        changeData={(e) => this.setState(e)}
+                      />
+                    }
+                  />
+                  <Route path="extractmenu" element={<ExtractMenu />} />
+                  <Route
+                    path="findrestaurant"
+                    element={<FindRestaurant data={this.state.tableData} />}
+                  />
+                </Route>
+              </Routes>
+            </BrowserRouter>
+          </div>
+        );
     }
 }

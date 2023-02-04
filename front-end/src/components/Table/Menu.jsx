@@ -16,10 +16,12 @@ const columns = [
   },
 ];
 
-const Menu = (props) => <Table 
+const Menu = (props) => {
+return( <Table 
     columns={columns} 
     dataSource={props.menu} 
     // scroll={{y:100}}
-  />;
+  />);
+}
 
 export default Menu;

@@ -7,6 +7,7 @@ import Main from '../../components/Main/Main';
 import Footer from '../../components/Footer/Footer';
 
 const ExploreRestaurant = (props) => {
+  
   return (
     <div className='AppGlass'>
       <Sidebar heading={"Explore Restaurant"}/>

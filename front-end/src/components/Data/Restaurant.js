@@ -28,7 +28,7 @@ export const Restaurant = [
     favorite: 1,
     menu: [
       {
-        food: "Pho Bo",
+        food: "Pho Ga",
         price: 50000
       },
       {
@@ -49,7 +49,7 @@ export const Restaurant = [
     favorite: 0,
     menu: [
       {
-        food: "Pho Bo",
+        food: "Pho Ngan",
         price: 50000
       },
       {

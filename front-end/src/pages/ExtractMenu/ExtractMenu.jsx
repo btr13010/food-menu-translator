@@ -5,12 +5,10 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Uploader from "../../components/Upload/Upload";
 import ShowMenu from "../../components/Upload/ShowMenu";
-import { Menu } from "antd";
 
 const ExtractMenu = () => {
   const [selectedFile, setSelectedFile] = useState();
   const [isFilePicked, setIsFilePicked] = useState(false);
-
 
   return (
     <div className="AppGlass">

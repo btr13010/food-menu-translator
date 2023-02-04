@@ -1,36 +1,19 @@
-
 import React, { useState } from "react";
 import { Input } from "antd";
 import Menu from "../Table/Menu";
-import Main from "../Main/Main"
-import { Restaurant } from "../Data/Restaurant";
 
 const { Search } = Input;
 
 const SearchRestaurant = (props) => {
-
   const [searched, setSearched] = useState(false);
-  const [finding, setFinding] = useState([]);
-  
- 
-
+  let result = [];
 
   const onSearch = (str) => {
-    setFinding([]);
-    for(let i=0; i < props.data.length; i++) {
-
-        for (let t=0; t < props.data[i].menu.length; t++){
-          if (props.data[i].menu[t].food.toLowerCase() === str.toLowerCase()){
-            setFinding([{...props.data[i]}]);
-          }
-        
-      }
-   }
-   setSearched(true);
+    result = props.data.filter(
+      (restaurant) => restaurant.menu.food.toLowerCase() === str.toLowerCase()
+    );
+    setSearched(true);
   };
-
-
-
 
   return (
     <div>
@@ -40,10 +23,7 @@ const SearchRestaurant = (props) => {
         enterButton
         style={{ width: 400 }}
       />
-      <h2>Enter Your Search</h2>
-      {console.log(finding)}
-      {searched && <Main restaurantData={finding}/>}
-  
+      {searched ? <Menu menu={result} /> : <h2>Enter Your Search</h2>}
     </div>
   );
 };

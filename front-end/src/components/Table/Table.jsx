@@ -28,10 +28,9 @@ const DataTable = (props) => {
       favorite: newFav,
       menu: record.menu,
     });
-    console.log(record)
     props.changeData(updatedDataSource); 
+    console.log(record)
     }
-    
 
   const columns = [
     {

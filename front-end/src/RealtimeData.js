@@ -8,7 +8,6 @@ import ExploreRestaurant from './pages/ExploreRestaurant/ExploreRestaurant';
 import ExtractMenu from './pages/ExtractMenu/ExtractMenu';
 import Favorite from './pages/Favorite/Favorite';
 import FindRestaurant from './pages/FindRestaurant/FindRestaurant';
-import { LandingPage } from './LandingPage';
 
 
 const db = StartFirebase();
@@ -38,7 +37,37 @@ export class RealtimeData extends React.Component{
     render(){
 
         return (
-          <LandingPage data={this.state.tableData}/>
+          <div className="App">
+            <BrowserRouter>
+              <Routes>
+                <Route path="/">
+                  <Route
+                    index
+                    element={
+                      <ExploreRestaurant
+                        data={this.state.tableData}
+                        changeData={(e) => this.setState(e)}
+                      />
+                    }
+                  />
+                  <Route
+                    path="favorite"
+                    element={
+                      <Favorite
+                        data={this.state.tableData}
+                        changeData={(e) => this.setState(e)}
+                      />
+                    }
+                  />
+                  <Route path="extractmenu" element={<ExtractMenu />} />
+                  <Route
+                    path="findrestaurant"
+                    element={<FindRestaurant data={this.state.tableData} />}
+                  />
+                </Route>
+              </Routes>
+            </BrowserRouter>
+          </div>
         );
     }
 }
